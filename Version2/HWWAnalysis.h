@@ -172,7 +172,7 @@ void HWWAnalysis::Terminate(TString s){
    
     TString filename_option = s;
     std::cout << "Writting with name option: " << filename_option << std::endl;
-    TString output_name="Output_HWWAnalysis/"+filename_option+".root";
+    TString output_name="../Output_HWWAnalysis/"+filename_option+".root";
     const char* filename = output_name;
 
     TFile physicsoutput(filename,"recreate");
