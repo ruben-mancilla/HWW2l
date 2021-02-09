@@ -22,4 +22,4 @@
 -------------------------------
 Es importante mencionar que la [Version2](https://github.com/ruben-mancilla/HWW2l/tree/master/Version2) sólo es una "mejora" ya que se crean clases para el análisis
 
-PD: Arturo, hago estás dos versiones como para tener dos estructura de migración y quedarme con la que más te gusten (o hacer todo de nuevo :-) )
+PD: Arturo, hago dos versiones como para tener dos estructura de migración y quedarme con la que más te gusten (o hacer todo de nuevo :-) )
