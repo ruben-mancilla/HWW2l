@@ -25,28 +25,28 @@ TChain *main_HWWAnalysis(int proof, TString s)
     
  /////////////////Data /////////////////
   
-  if (s.Contains("data_A")){
+  if (s.Contains("dataA")){
     TChain *chain_data = new TChain("mini");
     chain_data->AddFile(path+"Data/data_A.2lep.root");
     if (proof == 1)  chain_data->SetProof();
     f = chain_data;
   }  
   
-  if (s.Contains("data_B")){
+  if (s.Contains("dataB")){
     TChain *chain_data = new TChain("mini");
     chain_data->AddFile(path+"Data/data_B.2lep.root");
     if (proof == 1)  chain_data->SetProof();
     f = chain_data;
   }
     
-  if (s.Contains("data_C")){
+  if (s.Contains("dataC")){
     TChain *chain_data = new TChain("mini");
     chain_data->AddFile(path+"Data/data_C.2lep.root");
     if (proof == 1)  chain_data->SetProof();
     f = chain_data;
   }
     
-  if (s.Contains("data_D")){
+  if (s.Contains("dataD")){
     TChain *chain_data = new TChain("mini");
     chain_data->AddFile(path+"Data/data_D.2lep.root");
     if (proof == 1)  chain_data->SetProof();

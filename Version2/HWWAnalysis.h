@@ -58,47 +58,7 @@ public :
     TTreeReaderArray<int> jet_trueflav = {fReader, "jet_trueflav"};
     TTreeReaderValue<vector<bool>> jet_truthMatched = {fReader, "jet_truthMatched"};
     TTreeReaderArray<float> jet_MV2c10 = {fReader, "jet_MV2c10"};
-    TTreeReaderValue<UInt_t> photon_n = {fReader, "photon_n"};
-    TTreeReaderValue<vector<bool>> photon_truthMatched = {fReader, "photon_truthMatched"};
-    TTreeReaderValue<vector<bool>> photon_trigMatched = {fReader, "photon_trigMatched"};
-    TTreeReaderArray<float> photon_pt = {fReader, "photon_pt"};
-    TTreeReaderArray<float> photon_eta = {fReader, "photon_eta"};
-    TTreeReaderArray<float> photon_phi = {fReader, "photon_phi"};
-    TTreeReaderArray<float> photon_E = {fReader, "photon_E"};
-    TTreeReaderValue<vector<bool>> photon_isTightID = {fReader, "photon_isTightID"};
-    TTreeReaderArray<float> photon_ptcone30 = {fReader, "photon_ptcone30"};
-    TTreeReaderArray<float> photon_etcone20 = {fReader, "photon_etcone20"};
-    TTreeReaderArray<int> photon_convType = {fReader, "photon_convType"};
-    TTreeReaderValue<UInt_t> tau_n = {fReader, "tau_n"};
-    TTreeReaderArray<float> tau_pt = {fReader, "tau_pt"};
-    TTreeReaderArray<float> tau_eta = {fReader, "tau_eta"};
-    TTreeReaderArray<float> tau_phi = {fReader, "tau_phi"};
-    TTreeReaderArray<float> tau_E = {fReader, "tau_E"};
-    TTreeReaderValue<vector<bool>> tau_isTightID = {fReader, "tau_isTightID"};
-    TTreeReaderValue<vector<bool>> tau_truthMatched = {fReader, "tau_truthMatched"};
-    TTreeReaderValue<vector<bool>> tau_trigMatched = {fReader, "tau_trigMatched"};
-    TTreeReaderArray<int> tau_nTracks = {fReader, "tau_nTracks"};
-    TTreeReaderArray<float> tau_BDTid = {fReader, "tau_BDTid"};
-    TTreeReaderValue<Float_t> ditau_m = {fReader, "ditau_m"};
-    TTreeReaderArray<float> lep_pt_syst = {fReader, "lep_pt_syst"};
-    TTreeReaderValue<Float_t> met_et_syst = {fReader, "met_et_syst"};
-    TTreeReaderArray<float> jet_pt_syst = {fReader, "jet_pt_syst"};
-    TTreeReaderArray<float> photon_pt_syst = {fReader, "photon_pt_syst"};
-    TTreeReaderArray<float> tau_pt_syst = {fReader, "tau_pt_syst"};
-    TTreeReaderValue<Float_t> XSection = {fReader, "XSection"};
-    TTreeReaderValue<Float_t> SumWeights = {fReader, "SumWeights"};
-    TTreeReaderValue<UInt_t> largeRjet_n = {fReader, "largeRjet_n"};
-    TTreeReaderArray<float> largeRjet_pt = {fReader, "largeRjet_pt"};
-    TTreeReaderArray<float> largeRjet_eta = {fReader, "largeRjet_eta"};
-    TTreeReaderArray<float> largeRjet_phi = {fReader, "largeRjet_phi"};
-    TTreeReaderArray<float> largeRjet_E = {fReader, "largeRjet_E"};
-    TTreeReaderArray<float> largeRjet_m = {fReader, "largeRjet_m"};
-    TTreeReaderArray<float> largeRjet_truthMatched = {fReader, "largeRjet_truthMatched"};
-    TTreeReaderArray<float> largeRjet_D2 = {fReader, "largeRjet_D2"};
-    TTreeReaderArray<float> largeRjet_tau32 = {fReader, "largeRjet_tau32"};
-    TTreeReaderArray<float> largeRjet_pt_syst = {fReader, "largeRjet_pt_syst"};
-    TTreeReaderArray<int> tau_charge = {fReader, "tau_charge"};
-    
+   
     // Global variables histograms
     TH1F *hist_etmiss      = 0;
     TH1F *hist_mLL         = 0; 
@@ -178,4 +138,11 @@ void HWWAnalysis::Terminate(TString s){
     TFile physicsoutput(filename,"recreate");
     WriteHistograms();
     physicsoutput.Close();
+}
+
+void weight_data(TString f, Float_t &w){
+    
+    if (f.Contains("data")) { 
+        w = 1; 
+    }
 }
