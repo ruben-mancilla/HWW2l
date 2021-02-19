@@ -61,7 +61,6 @@ class Plotting{
 
 
  private:
-  void Disclaimer();
   void getHistoSettings();
   void AtlasStyle();
   void ATLASLabel(Double_t x,Double_t y);
