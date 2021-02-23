@@ -1,9 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 #define arraysize(x) (sizeof(x) / sizeof((x)[0]))
 /////////////////-------------------------------------------///////////////////
-
 #include <TROOT.h>
 #include <TChain.h>
+#include "TFile.h"
+#include "TString.h"
 #include <TTreeReader.h>
 #include <TTreeReaderValue.h>
 #include <TTreeReaderArray.h>
@@ -128,11 +129,11 @@ void HWWAnalysis::Init(TChain *tree)
    fReader.SetTree(tree);
 }
 
-void HWWAnalysis::Terminate(TString s){
+void HWWAnalysis::Terminate(TString m){
    
-    TString filename_option = s;
+    TString filename_option = m;
     std::cout << "Writting with name option: " << filename_option << std::endl;
-    TString output_name="../Output_HWWAnalysis/"+filename_option+".root";
+    TString output_name="Analysis/Output_HWWAnalysis/"+filename_option+".root";
     const char* filename = output_name;
 
     TFile physicsoutput(filename,"recreate");
@@ -140,9 +141,8 @@ void HWWAnalysis::Terminate(TString s){
     physicsoutput.Close();
 }
 
-void weight_data(TString f, Float_t &w){
-    
-    if (f.Contains("data")) { 
-        w = 1; 
-    }
+bool fileExists( std::string const& name )
+{
+  struct stat buffer;   
+  return (stat(name.c_str(), &buffer) == 0); 
 }
