@@ -1,25 +1,18 @@
-# H->WW->lvlv (Versiones de prueba)
+# Análisis del Bosón de Higgs en el Canal de Decaimiento H-->WW*-->eνµν con un Centro de Masa de 13TeV
 ---------------------------------------------------------
 ### Este notebook consta de:
 -------------------------------------------------------
 - El código de análisis [cpp_H_WW_2l_channel_analysis.ipynb](https://github.com/ruben-mancilla/HWW2l/blob/master/cpp_H_WW_2l_channel_analysis.ipynb) que hace toda la seleción y almacena los histogramas de salida
 
-- El encabezado de análisis [make_HWW_objects.h](https://github.com/ruben-mancilla/HWW2l/blob/master/make_HWW_objects.h) que define y da acceso a las variables almacenadas en la muestra de entrada
+- <b>Directorio [Analysis](https://github.com/ruben-mancilla/HWW2l/tree/master/Analysis)</b>
+    - El encabezado de análisis [make_HWW_objects.h](https://github.com/ruben-mancilla/HWW2l/blob/master/Analysis/make_HWW_objects.h) que define y da acceso a las variables almacenadas en la muestra de entrada
+    - El encabezado de histogramas [HWWAnalysisHistograms.h](https://github.com/ruben-mancilla/HWW2l/blob/master/Analysis/HWWAnalysisHistograms.h) que define los histogramas de salida así como funciones que permiten llenar, escribir y limpiar los histogramas
+   - El macro de anáalisis [main_HWWAnalysis.C](https://github.com/ruben-mancilla/HWW2l/blob/master/Analysis/main_HWWAnalysis.C) que controla las muestras de entrada y su ubicación
+   - El array [array_sample.C](https://github.com/ruben-mancilla/HWW2l/blob/master/Analysis/array_sample.C) que es el encargado de asignar los nombres de las muestras a analizar
 
-- El encabezado de histogramas [HWWAnalysisHistograms.h](https://github.com/ruben-mancilla/HWW2l/blob/master/HWWAnalysisHistograms.h) que define los histogramas de salida
+- <b>Directorio [Plotting](https://github.com/ruben-mancilla/HWW2l/tree/master/Plotting)</b>
+    - El encabezado del graficado [Plotting.h](https://github.com/ruben-mancilla/HWW2l/tree/master/Plotting/Plotting.h) que funcine las funciones principales para el graficado
+    - El macro de graficado [Plotting.C](https://github.com/ruben-mancilla/HWW2l/tree/master/Plotting/Plotting.C) que se encarga de obtener y guardar los plots finales
 
-- El macro de anáalisis [main_HWWAnalysis.C](https://github.com/ruben-mancilla/HWW2l/blob/master/main_HWWAnalysis.C) que controla las muestras de entrada y su ubicación
-
-- El array [array_sample.C](https://github.com/ruben-mancilla/HWW2l/blob/master/array_sample.C) que es el encargado de asignar los nombres de las muestras a analizar  
-
-- El directorio de salida (Output_HWWAnalysis)[https://github.com/ruben-mancilla/HWW2l/tree/master/Output_HWWAnalysis] es donde se almacena los archivos .root que contienen todos los hitogramas de salida (uno por cada muestra)
-
-- El directorio [Version2](https://github.com/ruben-mancilla/HWW2l/tree/master/Version2) que contiene otra versión del análisis (en estructura) y consta de:  
-    - El código de análisis [cpp_H_WW_2l_channel_analysis.ipynb](https://github.com/ruben-mancilla/HWW2l/blob/master/Version2/cpp_H_WW_2l_channel_analysis.ipynb) que hace toda la selección y almacena los histogramas de salidas
-    - El encabezado de anáalisis [HWWAnalysis.h](https://github.com/ruben-mancilla/HWW2l/blob/master/Version2/HWWAnalysis.h) que define los histogramas, define y proporciona acceso a las variables almacenadas en las muestras de entrada
-    - El encabezado de histogramas [HWWAnalysisHistograms.h](https://github.com/ruben-mancilla/HWW2l/blob/master/Version2/HWWAnalysisHistograms.h) que define el nombre de los histogramas de salida
-
--------------------------------
-Es importante mencionar que la [Version2](https://github.com/ruben-mancilla/HWW2l/tree/master/Version2) sólo es una "mejora" ya que se crean clases para el análisis
-
-PD: Arturo, hago dos versiones como para tener dos estructura de migración y quedarme con la que más te gusten (o hacer todo de nuevo :-) )
+- El directorio [Version2](https://github.com/ruben-mancilla/HWW2l/tree/master/Version2) que contiene otra versión del análisis (en estructura). Su diferencia radica en que se crea una clase "HWWAnalysis" (en ellas funciones esenciales) para realizar el análisis
+--------------------------------------------------------------------
